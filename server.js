@@ -18,7 +18,9 @@ app.use(bodyParser.json())
 
 // Include route files in the server
 // =================================================
+require('./app/routing/api-routes.js')(app);
 require('./app/routing/html-routes')(app);
+
 
 // Listen 
 // =================================================
