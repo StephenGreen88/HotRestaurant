@@ -1,14 +1,16 @@
-// Create table array with information that matches what's on the form
-// ===================================================
-var tableArray = [
-    {
-        customerName: 'Stephen',
-        customerEmail: 'code@example.com',
-        customerID: 'code1234',
-        phoneNumber: '000-000-0000'
-    }
-];
+// ===============================================================================
+// DATA
+// Below data will hold all of the reserved tables.
+// Initially we just set it equal to a "dummy" customer.
+// But you could have it be an empty array as well.
+// ===============================================================================
 
-// Use module.exports so this information can be used in another file. Store in a variable for ease of use.
-// ===================================================
+var tableArray = [{
+    customerName: "Stephen",
+    customerEmail: "stephen@example.com",
+    customerID: "sgreencodemachine",
+    phoneNumber: "000-000-0000"
+}];
+
+// Note how we export the array. This makes it accessible to other files using require.
 module.exports = tableArray;

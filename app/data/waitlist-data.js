@@ -1,14 +1,20 @@
-// Create table array with information that matches what's on the form
-// ===================================================
+// ===============================================================================
+// DATA
+// Below data will hold all of the waitlist tables.
+// Initially we just set it equal to a "dummy" customer.
+// But you could have it be an empty array as well.
+// ===============================================================================
+
 var waitingArray = [
     {
-        customerName: 'Saima',
-        customerEmail: 'saima@example.com',
-        customerID: 'saimacool',
-        phoneNumber: '000-000-0000'
+      customerName: "Kelly",
+      customerEmail: "kelly@example.com",
+      phoneNumber: "000-000-0000",
+      customerID: "KellyCool"
     }
-];
-
-// Use module.exports so this information can be used in another file. Store in a variable for ease of use.
-// ===================================================
-module.exports = waitingArray;
+  ];
+  
+  
+  // Note how we export the array. This makes it accessible to other files using require.
+  module.exports = waitingArray;
+  

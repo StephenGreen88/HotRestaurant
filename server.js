@@ -1,29 +1,28 @@
 // Require in the necessary dependencies and set variables and define PORT
 // =================================================
-var bodyParser = require('body-parser');
 var express = require('express');
-var path = require('path');
 
+// Tells node that we are creating an express server
 var app = express();
+// Set the intial port. We'll use this in the listener
 var PORT = process.env.PORT || 8080;
 
-// Parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({
-    extended: false
-}))
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({
+    extended: true
+}));
+app.use(express.json());
 
-// Parse application JSON
-// =================================================
-app.use(bodyParser.json())
-
-// Include route files in the server
+// The below points the server to a series for 'route' files.
+// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // =================================================
 require('./app/routing/api-routes.js')(app);
 require('./app/routing/html-routes')(app);
 
 
-// Listen 
+// Listener
+// The code below effectively 'starts' the server
 // =================================================
-app.listen(PORT, function() {
+app.listen(PORT, function () {
     console.log('App is listening on PORT: ' + PORT);
 });
